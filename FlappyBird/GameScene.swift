@@ -200,10 +200,25 @@ class GameScene: SKScene, SKPhysicsContactDelegate{
         scoreLabelNode.text = String(score)
         
         // Restart animation
-        moving.speed = 1
+        moving.speed = 4
     }
     
-    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+//    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+//        /* Called when a touch begins */
+//        if moving.speed > 0  {
+//            for touch: AnyObject in touches {
+//                let location = touch.locationInNode(self)
+//                
+//                bird.physicsBody?.velocity = CGVectorMake(0, 0)
+//                bird.physicsBody?.applyImpulse(CGVectorMake(0, 30))
+//                
+//            }
+//        }else if canRestart {
+//            self.resetScene()
+//        }
+//    }
+
+    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
         /* Called when a touch begins */
         if moving.speed > 0  {
             for touch: AnyObject in touches {
